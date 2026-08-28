@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAAPV STORE</title>
+<meta name="description" content="DAAPV STORE - Semua link resmi Daapv Store.">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;overflow-x:hidden;color:#fff;
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 50% -10%,rgba(0,132,255,.24),transparent 35%),
+    radial-gradient(circle at 0% 45%,rgba(0,110,255,.10),transparent 30%),
+    radial-gradient(circle at 100% 65%,rgba(0,160,255,.08),transparent 28%),
+    #020914;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;
+  background-image:radial-gradient(circle,rgba(50,160,255,.8) 1px,transparent 1px);
+  background-size:90px 90px;
+  mask-image:linear-gradient(to bottom,black,transparent 85%);
+}
+.glow{position:fixed;width:350px;height:350px;border-radius:50%;pointer-events:none;filter:blur(120px);opacity:.12;z-index:-1}
+.glow-1{top:-180px;left:-120px;background:#008cff}
+.glow-2{right:-180px;top:40%;background:#006eff}
+.container{width:100%;max-width:620px;margin:auto;padding:48px 16px 35px;position:relative}
+.profile{text-align:center;animation:fadeIn .7s ease}
+.brand{
+  font-size:clamp(42px,12vw,68px);font-weight:950;letter-spacing:-4px;line-height:.95;
+  background:linear-gradient(90deg,#007cff,#fff,#45b3ff);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:0 0 40px rgba(0,140,255,.22);
+}
+.verified{
+  display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;
+  margin-left:5px;border-radius:50%;background:#008cff;color:#fff;font-size:12px;font-weight:900;
+  vertical-align:12px;box-shadow:0 0 12px rgba(0,140,255,.5);
+}
+.subtitle{margin-top:16px;color:#dce9f7;font-size:15px;font-weight:600}
+.welcome{
+  display:inline-flex;align-items:center;gap:9px;margin-top:22px;padding:9px 18px;
+  border:1px solid rgba(0,145,255,.55);border-radius:999px;background:rgba(0,116,255,.06);
+  color:#e7f4ff;font-size:12px;font-weight:600;box-shadow:0 0 25px rgba(0,140,255,.06)
+}
+.welcome-dot{width:8px;height:8px;border-radius:50%;background:#1597ff;box-shadow:0 0 12px #1597ff;animation:pulse 1.8s infinite}
+.description{max-width:510px;margin:17px auto 0;color:#8fa5bc;font-size:12px;line-height:1.7}
+.links{display:flex;flex-direction:column;gap:13px;margin-top:30px}
+.link{
+  position:relative;display:flex;align-items:center;width:100%;min-height:78px;padding:11px 14px;
+  border:1px solid rgba(0,142,255,.72);border-radius:19px;
+  background:linear-gradient(120deg,rgba(5,29,51,.95),rgba(2,16,30,.92));
+  box-shadow:0 0 22px rgba(0,130,255,.06),inset 0 0 20px rgba(0,130,255,.025);
+  color:#fff;text-decoration:none;transition:transform .25s,border-color .25s,box-shadow .25s,background .25s;
+  animation:slideUp .65s ease both;
+}
+.link:nth-child(1){animation-delay:.08s}.link:nth-child(2){animation-delay:.15s}.link:nth-child(3){animation-delay:.22s}
+.link:nth-child(4){animation-delay:.29s}.link:nth-child(5){animation-delay:.36s}
+.link:hover{transform:translateY(-4px);border-color:rgba(35,158,255,.95);background:linear-gradient(120deg,rgba(7,42,72,.98),rgba(3,21,38,.96));box-shadow:0 0 32px rgba(0,140,255,.16)}
+.link:active{transform:scale(.98)}
+.icon{
+  flex-shrink:0;width:52px;height:52px;display:flex;align-items:center;justify-content:center;border-radius:15px;
+  background:linear-gradient(145deg,#1596ff,#0061c9);font-size:23px;box-shadow:0 8px 22px rgba(0,120,255,.22)
+}
+.link-info{flex:1;min-width:0;margin-left:14px}
+.link-title{display:block;font-size:15px;font-weight:800;line-height:1.3}
+.link-desc{display:block;margin-top:4px;color:#91a8bf;font-size:11px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.arrow{margin-left:10px;color:#55b5ff;font-size:29px;font-weight:300;transition:transform .25s}
+.link:hover .arrow{transform:translateX(5px)}
+.trust{
+  margin-top:25px;padding:17px 15px;text-align:center;border:1px solid rgba(0,140,255,.28);border-radius:18px;
+  background:linear-gradient(120deg,rgba(0,83,145,.14),rgba(3,22,38,.4));box-shadow:0 0 25px rgba(0,132,255,.05)
+}
+.trust-title{color:#36a8ff;font-size:13px;font-weight:800}
+.trust-description{margin-top:5px;color:#7e94ab;font-size:10px}
+.social{margin-top:27px;text-align:center}
+.social-title{color:#c9d9e9;font-size:12px;margin-bottom:13px}
+.social-list{display:flex;align-items:center;justify-content:center;gap:11px}
+.social-button{
+  width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:50%;
+  border:1px solid rgba(0,140,255,.36);background:rgba(0,75,135,.16);color:#dcefff;font-size:19px;
+  text-decoration:none;transition:transform .25s,background .25s,box-shadow .25s
+}
+.social-button:hover{transform:translateY(-4px);background:rgba(0,132,255,.2);box-shadow:0 0 22px rgba(0,140,255,.16)}
+footer{margin-top:32px;padding-top:19px;border-top:1px solid rgba(255,255,255,.06);text-align:center;color:#61768d;font-size:10px;line-height:1.8}
+footer strong{color:#8da6be}
+@keyframes fadeIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+@media(max-width:480px){
+  .container{padding:40px 13px 27px}.brand{font-size:42px;letter-spacing:-2.5px}.subtitle{font-size:13px}
+  .welcome{margin-top:18px;padding:8px 15px;font-size:11px}.description{font-size:11px}
+  .links{margin-top:26px;gap:11px}.link{min-height:72px;padding:9px 11px;border-radius:17px}
+  .icon{width:47px;height:47px;border-radius:13px;font-size:21px}.link-info{margin-left:11px}
+  .link-title{font-size:14px}.link-desc{font-size:10px}.arrow{font-size:24px}
+  .trust{margin-top:21px;padding:15px 12px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+
+<body>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+
+<div class="container">
+
+<header class="profile">
+  <h1 class="brand">DAAPV STORE <span class="verified">✓</span></h1>
+  <p class="subtitle">Solusi terbaik untuk kebutuhan digitalmu</p>
+  <div class="welcome"><span class="welcome-dot"></span>Welcome to Daapv Store</div>
+  <p class="description">
+    Semua link resmi Daapv Store ada di sini. Hubungi admin, order produk,
+    lihat testimoni, atau bergabung menjadi reseller.
+  </p>
+</header>
+
+<main class="links">
+
+<a class="link" href="https://t.me/Daapv2" target="_blank" rel="noopener noreferrer">
+  <div class="icon">✈️</div>
+  <div class="link-info">
+    <span class="link-title">Telegram Pribadi</span>
+    <span class="link-desc">Chat langsung dengan admin Daapv Store</span>
+  </div>
+  <span class="arrow">›</span>
+</a>
+
+<a class="link" href="https://t.me/daapambot" target="_blank" rel="noopener noreferrer">
+  <div class="icon">🤖</div>
+  <div class="link-info">
+    <span class="link-title">Bot Telegram</span>
+    <span class="link-desc">Gunakan bot otomatis Daapv Store</span>
+  </div>
+  <span class="arrow">›</span>
+</a>
+
+<a class="link" href="https://wa.me/6283171044947" target="_blank" rel="noopener noreferrer">
+  <div class="icon">💬</div>
+  <div class="link-info">
+    <span class="link-title">Order via WhatsApp</span>
+    <span class="link-desc">Pesan produk dengan cepat melalui WhatsApp</span>
+  </div>
+  <span class="arrow">›</span>
+</a>
+
+<a class="link" href="https://whatsapp.com/channel/0029VbClUf1A89Mc7HtqjV3L" target="_blank" rel="noopener noreferrer">
+  <div class="icon">⭐</div>
+  <div class="link-info">
+    <span class="link-title">Testimoni</span>
+    <span class="link-desc">Lihat testimoni pelanggan Daapv Store</span>
+  </div>
+  <span class="arrow">›</span>
+</a>
+
+<a class="link" href="https://wa.me/6283171044947" target="_blank" rel="noopener noreferrer">
+  <div class="icon">👥</div>
+  <div class="link-info">
+    <span class="link-title">Join Reseller</span>
+    <span class="link-desc">Daftar menjadi reseller Daapv Store</span>
+  </div>
+  <span class="arrow">›</span>
+</a>
+
+</main>
+
+<section class="trust">
+  <div class="trust-title">🛡️ Aman • Cepat • Terpercaya</div>
+  <div class="trust-description">Daapv Store siap membantu kebutuhan digital kamu.</div>
+</section>
+
+<section class="social">
+  <div class="social-title">Follow & Contact Daapv Store</div>
+  <div class="social-list">
+    <a class="social-button" href="https://t.me/Daapv2" target="_blank" rel="noopener noreferrer">✈️</a>
+    <a class="social-button" href="https://wa.me/6283171044947" target="_blank" rel="noopener noreferrer">💬</a>
+    <a class="social-button" href="https://t.me/daapv" target="_blank" rel="noopener noreferrer">📢</a>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 <strong>Daapv Store</strong>. All rights reserved.</div>
+  <div>Made with 💙 for you</div>
+</footer>
+
+</div>
+
+<script>
+document.querySelectorAll(".link").forEach((link,index)=>{
+  link.style.animationDelay=`${index*80+80}ms`;
+});
+</script>
+</body>
+</html>
